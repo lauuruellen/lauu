@@ -87,16 +87,16 @@ p.create_hint {
 th {
     font-family: Open Sans Light Italic;
     height: 1px;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.0);
 }
 
 tr {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.0);
     border-bottom: 0;
 }
 
 tr:last-child {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0);
 }
 
 td {
