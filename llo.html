@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="b4w.min.js"></script>
+<script>
+
+var m_app = b4w.require("app");
+var m_data = b4w.require("data");
+
+m_app.init({
+    canvas_container_id: "container_id",
+    callback: load_cb
+})
+
+function load_cb() {
+    m_data.load("natur06.json", loaded_cb);
+}
+
+function loaded_cb() {
+    m_app.enable_camera_controls();
+}
+
+</script>
+</head>
+
+<body>
+    <div id="container_id" style="width: 350px; height: 200px;"></div>
+</body>
+
+</html>
