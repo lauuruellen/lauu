@@ -326,12 +326,14 @@ div.desc {
 .square-container {  /* any display: block; element */
   position: relative;
   padding-bottom: 60%; /* of parent width */
-  max-width:1080px;
-
+  max-height:600;
 }
 .square-content {
   position: absolute;
   left: 0;
   top: 0;
+  max-width: 500px;
+  height: 100%;
+  width: 100%;
 
 }
