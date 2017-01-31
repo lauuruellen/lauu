@@ -327,6 +327,8 @@ div.desc {
   position: relative;
   height: 800px;
   padding-bottom: 100%; /* of parent width */
+  max-width: 80px;
+  max-height:60;
 }
 .square-content {
   position: absolute;
@@ -334,6 +336,5 @@ div.desc {
   top: 0;
   height: 100%;
   width: 100%;
-  max-width: 800px;
-  max-height:600;
+
 }
