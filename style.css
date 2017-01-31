@@ -320,3 +320,18 @@ div.desc {
     display: table;
     clear: both;
 }
+
+
+
+.square-container {  /* any display: block; element */
+  position: relative;
+  height: 0;
+  padding-bottom: 100%; /* of parent width */
+}
+.square-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}

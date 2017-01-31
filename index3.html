@@ -2,91 +2,16 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Buick</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>Blend4Web SDK</title>
-
-    <link rel="shortcut icon" sizes="128x128" href="index_assets/img/favicon_128.png" />
-    <link rel="shortcut icon" sizes="196x196" href="index_assets/img/favicon_196.png" />
-    <link rel="shortcut icon" href="index_assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="128x128" href="index_assets/img/favicon_128.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="index_assets/img/favicon_128.png" />
-    <link rel="stylesheet" type="text/css" href="index_assets/css/style.css">
-
-<script type="text/javascript" src="deploy/apps/common/b4w.min.js"></script>
-
+<script type="text/javascript" src="b4w.min.js"></script>
 <script type="text/javascript">
+<script>
 
 var CONTEXT_NAMES = ["webgl", "experimental-webgl"];
 
-window.addEventListener("load", function() {
-
-    var msg = document.getElementById("webgl_support_status");
-
-    if (!window.WebGLRenderingContext) {
-
-        msg.innerHTML = "not supported";
-        msg.className = "red";
-
-    } else {
-
-        var canvas = document.createElement("canvas");
-
-        var ctx = null;
-
-        for (var i = 0; i < CONTEXT_NAMES.length; i++) {
-            var name = CONTEXT_NAMES[i];
-
-            try {
-                ctx = canvas.getContext(name);
-            } catch(e) {
-                // nothing
-            }
-
-            if (ctx)
-                break;
-        }
-
-        if (ctx) {
-            msg.innerHTML = "available";
-            msg.className = "green";
-        } else {
-            msg.innerHTML = "cannot initialize context";
-            msg.className = "red";
-        }
-    }
-
-
-    var dev_server_status = document.getElementById("dev_server_status");
-    var dev_server_hint = document.getElementById("dev_server_hint");
-    check_dev_server();
-
     check_performance();
-
-}, false)
-
-function check_dev_server() {
-
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState == 4)
-            display_server_status(request.status == 200);
-    };
-    request.open('GET', '/', true);
-    request.send(null);
-}
-
-function display_server_status(result) {
-
-    if (result) {
-        dev_server_status.innerHTML = "available";
-        dev_server_status.className = "green";
-        dev_server_hint.style.display = "none";
-    } else {
-        dev_server_status.innerHTML = "not available";
-        dev_server_status.className = "red";
-        dev_server_hint.style.display = "";
-    }
-}
 
 function check_performance() {
     var canvas = document.createElement("canvas");
@@ -102,110 +27,114 @@ function check_performance() {
     });
 }
 
-
 </script>
 
 </head>
 
 <body>
     <header>
-        <h2>Busydoyy
-        </h2>
+      <h3><a href="https://lauuruellen.github.io/lauu/index2.html" >..</a></h3>
     </header>
 
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">
-                        <h3>Tools</h3>
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="doc">
-                <tr>
-                    <td><p><b>WebGL:</b> <span id="webgl_support_status">checking...</span></p></td>
-                    <td><p><b>GPU:</b> <span id="performance">checking...</span></p></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="responsive">
+          <div class="img">
+            <a href="https://lauuruellen.github.io/lauu/one.html?show_fps" target="_blank"> <img src="index_files/one.png" alt="1"></a>
+            <div class="desc"></div>
+          </div>
+        </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="3">
-                        <h3>Tools</h3>
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="doc">
-                <tr>
-                    <td><a href="/project/">Project Manager</a></td>
-                    <!--blend4web_pro_lite-->
-                    <!--blend4web_ce_lite-->
-                    <td><a href="/apps_dev/code_snippets/code_snippets.html">Code Snippets</a></td>
-                    <td><a href="deploy/webglreport/index.html">WebGL Report</a></td>
-                    <!--blend4web_ce_lite-->
-                    <!--blend4web_pro_lite-->
-                </tr>
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="4">
-                        <h3>Helpful Resources</h3>
-                    </th>
-                </tr>
-                <tr class="doc">
-                    <th></th>
-                    <th>English</th>
-                    <th>Русский</th>
-                    <th>中文</th>
-                </tr>
-            </thead>
-            <tbody class="doc">
-                <tr>
-                    <td>User Manual, HTML</td>
-                    <td><a href="deploy/doc/en/index.html">read</a></td>
-                    <td><a href="deploy/doc/ru/index.html">читать</a></td>
-                    <td><a href="deploy/doc/zh/index.html">读</a></td>
-                </tr>
-                <!--blend4web_pro_lite-->
-                <!--blend4web_ce_lite-->
-                <tr>
-                    <td>User Manual, PDF</td>
-                    <td><a href="deploy/pub/b4w_manual_en.pdf">read</a></td>
-                    <td><a href="deploy/pub/b4w_manual_ru.pdf">читать</a></td>
-                    <td><a href="deploy/pub/b4w_manual_zh.pdf">读</a></td>
-                </tr>
-                <!--blend4web_ce_lite-->
-                <!--blend4web_pro_lite-->
-                <tr>
-                    <td>API Reference</td>
-                    <td colspan="3"><a href="deploy/api_doc/index.html">read</a></td>
-                </tr>
-                <tr>
-                    <td>Tutorials</td>
-                    <td><a target="_blank" href="https://www.blend4web.com/en/community/category/8/1/">go</a></td>
-                    <td><a target="_blank" href="https://www.blend4web.com/ru/community/category/3/1/">перейти</a></td>
-                    <td><a target="_blank" href="https://www.blend4web.com/zh/community/category/14/1/">执行</a></td>
-                </tr>
-                <tr>
-                    <td>FAQ</td>
-                    <td><a target="_blank" href="https://www.blend4web.com/en/community/faq/">go</a></td>
-                    <td><a target="_blank" href="https://www.blend4web.com/ru/community/faq/">перейти</a></td>
-                    <td><a target="_blank" href="https://www.blend4web.com/zh/community/faq/">执行</a></td>
-                </tr>
-                <tr>
-                    <td>Community Support Forums</td>
-                    <td><a target="_blank" href="https://www.blend4web.com/en/forums/">go</a></td>
-                    <td><a target="_blank" href="https://www.blend4web.com/ru/forums/">перейти</a></td>
-                    <td><a target="_blank" href="https://www.blend4web.com/zh/forums/">执行</a></td>
-                </tr>
+        <div class="responsive">
+          <div class="img">
+            <a href="https://lauuruellen.github.io/lauu/skele01.html?show_fps" target="_blank"> <img src="index_files/skele01.png" alt="skele"> </a>
+            <div class="desc"></div>
+          </div>
+        </div>
 
 
-            </tbody>
-        </table>
-    </div>
+<video width="49%" height="auto" autoplay loop controls> <source src="0000-0620.mp4" type="video/mp4"> <source src="0000-0620.ogv" type="video/ogv"> Your browser does not support the video tag. </video> </a>
+
+<video width="49%" height="auto"autoplay loop controls> <source src="0000-1504.mp4" type="video/mp4"> <source src="0000-1504.ogv" type="video/ogv"> Your browser does not support the video tag. </video> </a>
+
+        <div class="responsive">
+          <div class="img">
+            <a href="https://lauuruellen.github.io/lauu/two.html" target="_blank"> <img src="index_files/two.png" alt="2" width="100%" height="100%"></a>
+            <div class="desc"></div>
+          </div>
+        </div>
+
+<div class="responsive">
+  <div class="img">
+    <a href="https://lauuruellen.github.io/lauu/kitchrudder01.html" target="_blank"> <img src="index_files/kitchrudder.png" alt="kitchrddr" width="100%" height="auto"></a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img">
+    <a href="https://lauuruellen.github.io/lauu/8.html" target="_blank"> <img src="index_files/8.png" alt="8" width="100%%" height="auto"></a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img">
+    <a href="https://lauuruellen.github.io/lauu/10.html" target="_blank"> <img src="index_files/10.png" alt="10" width="100%" height="100%"></a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+
+
+
+<div class="responsive">
+<div class="img">
+  <a href="https://lauuruellen.github.io/lauu/13.html" target="_blank"> <img src="index_files/13.png" alt="13" width="100%" height="100%"></a>
+  <div class="desc"></div>
+</div>
+</div>
+
+<div class="responsive">
+  <div class="img">
+    <a href="https://lauuruellen.github.io/lauu/12.html" target="_blank"> <img src="index_files/12.png" alt="12" width="100%" height="100%"></a>
+    <div class="desc"></div>
+  </div>
+</div>
+
+<div class="responsive">
+<div class="img">
+  <a href="https://lauuruellen.github.io/lauu/4.html" target="_blank"> <img src="index_files/4.png" alt="4" width="100%" height="100%"></a>
+  <div class="desc"></div>
+</div>
+</div>
+
+<div class="responsive">
+<div class="img">
+  <a href="https://lauuruellen.github.io/lauu/9.html" target="_blank"> <img src="index_files/9.png" alt="9" width="100%" height="100%"></a>
+  <div class="desc"></div>
+</div>
+</div>
+
+        <div class="clearfix"></div>
+        <div style="padding:6px;">
+        </div>
+
+<a href="https://lauuruellen.github.io/lauu/7.html" target="_blank"> <img src="index_files/7.png" alt="7" width="100%" height="100%"></a></p>
+
+<div class="square-container">
+  <div class="square-content">
+    <iframe allowfullscreen src="webplayer.html?load=vene02.json" width="100%" height="800px" ></iframe>
+</div>
+</div>
+
+
+<table>
+        <tbody class="doc">
+        <tr>
+            <td><p><b>WebGL:</b> <span id="webgl_support_status">checking...</span></p></td>
+            <td><p><b>GPU:</b> <span id="performance">checking...</span></p></td>
+        </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
