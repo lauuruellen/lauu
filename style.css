@@ -326,8 +326,7 @@ div.desc {
 .square-container {  /* any display: block; element */
   position: relative;
   padding-bottom: 60%; /* of parent width */
-  max-width:1080px;
-  max-height:800;
+
 }
 .square-content {
   position: absolute;
