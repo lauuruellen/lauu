@@ -10,22 +10,6 @@
 
 var CONTEXT_NAMES = ["webgl", "experimental-webgl"];
 
-    check_performance();
-
-function check_performance() {
-    var canvas = document.createElement("canvas");
-    canvas.style.display = "none";
-    window.document.body.appendChild(canvas);
-    b4w.require("main").init(canvas);
-    b4w.require("debug").test_performance(function(time, bw) {
-        var performance = document.getElementById("performance");
-        if (time)
-            performance.innerHTML = Math.round(1000 / time) + " points, bandwidth " + bw.toFixed(1) + " GB/s";
-        else
-            performance.innerHTML = "N/A";
-    });
-}
-
 </script>
 
 </head>
@@ -126,16 +110,6 @@ function check_performance() {
 
 <video width="49%" height="auto" autoplay controls> <source src="https://sdfgtaewrtgesdf.updog.co/1.mp4" type="video/mp4"></video> </a>
 <video width="49%" height="auto" autoplay controls> <source src="https://sdfgtaewrtgesdf.updog.co/2.mp4" type="video/mp4"></video> </a>
-
-
-<table>
-        <tbody class="doc">
-        <tr>
-            <td><p><b>WebGL:</b> <span id="webgl_support_status">checking...</span></p></td>
-            <td><p><b>GPU:</b> <span id="performance">checking...</span></p></td>
-        </tr>
-    </tbody>
-</table>
 
 </body>
 </html>
